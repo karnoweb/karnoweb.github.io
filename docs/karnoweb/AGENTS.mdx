@@ -1,0 +1,34 @@
+# راهنمای Agent (Cursor / Claude / GPT / Stitch)
+
+این repo **مستندات برند و وب‌سایت Karnoweb** است — نه کد اپلیکیشن.
+
+## قبل از هر کار
+1. [docs/TEMPLATE.mdx](docs/TEMPLATE.mdx) — قالب ثابت هر فایل
+2. [00-brand/brand-overview.mdx](00-brand/brand-overview.mdx) — هویت و پیام
+3. [00-brand/colors-and-theme.mdx](00-brand/colors-and-theme.mdx) — توکن‌های بصری
+4. [01-global/sitemap.mdx](01-global/sitemap.mdx) — ساختار URL
+
+## قوانین
+
+- هر صفحه/سکشن = یک فایل `.md` در پوشه مربوط
+- همه سکشن‌های قالب را حفظ کن (حتی اگر کوتاه باشد)
+- لحن: Technical, Enterprise, Modern — فارسی رسمی و روشن
+- Karnoweb = زیرساخت دیجیتال + سامانه + رشد (نه فقط طراحی سایت)
+- UI مرجع: Vercel, Linear, Stripe, Framer
+
+## اولویت محتوا
+
+فایل‌های تکمیل‌شده: `brand-overview`, `colors-and-theme`, `sitemap`, `02-home/overview`, `03-services/overview`, `04-products/overview`.
+
+بقیه: پیش‌نویس — هنگام ویرایش، از overview همان بخش و brand پیروی کن.
+
+## نمونه prompt
+
+```text
+بر اساس 02-home/hero-section.mdx و 00-brand و docs/TEMPLATE.mdx،
+سکشن Hero صفحه اصلی را به Alpine + Tailwind پیشنهاد بده.
+```
+
+## تبدیل به PRD
+
+از چند فایل مرتبط یک PRD بساز: Goal + Sections + Components + CTA + Technical از `18-technical/`.

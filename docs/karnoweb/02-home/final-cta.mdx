@@ -1,0 +1,100 @@
+## سکشن CTA نهایی
+
+### هدف
+**آخرین فرصت تبدیل** — کاربری که تا اینجا اسکرول کرده، آماده‌ترین کاربر صفحه است.
+این سکشن باید قوی‌ترین CTA صفحه را داشته باشد.
+
+---
+
+### ساختار سکشن
+
+**ویژوال:**
+- Full-Width Section با Background تیره (Dark Navy یا Gradient برند)
+- Particle Motion یا Gradient Animation ملایم در پس‌زمینه
+- بدون عکس — فقط Typography و CTA
+
+---
+
+**محتوا:**
+
+| عنصر | محتوا |
+|------|--------|
+| **Title** | آماده رشد دیجیتال کسب‌وکارت هستی؟ |
+| **Subtitle** | از طراحی زیرساخت تا توسعه و رشد — کارنووب کنار شماست. اولین جلسه رایگان است. |
+| **CTA Primary** | رزرو جلسه استراتژی |
+| **CTA Secondary** | دریافت مشاوره رایگان |
+
+**لینک‌ها:**
+- CTA Primary: `/contact?type=consultation&source=home-final-cta`
+- CTA Secondary: `/contact?type=quick&source=home-final-cta`
+
+---
+
+**عناصر اعتمادسازی زیر CTAها:**
+```
+✓ پاسخگویی در کمتر از ۲۴ ساعت
+✓ مشاوره تخصصی بدون فروش اجباری
+✓ اولین جلسه کاملاً رایگان
+```
+رنگ متن: سفید با opacity 80٪
+
+---
+
+**گزینه‌های تماس سریع (اختیاری):**
+```
+یا مستقیم با ما در ارتباط باش:
+[📱 واتساپ]  [✈️ تلگرام]  [☎️ تماس مستقیم]
+```
+
+---
+
+**UI Direction:**
+- Background: `linear-gradient(135deg, #0F172A 0%, #1E293B 100%)`
+- Title: سفید، فونت بزرگ (Display)
+- CTA Primary: رنگ Brand Blue پررنگ روی Dark
+- CTA Secondary: Outline سفید
+- Glow Animation زیر دکمه Primary
+
+---
+
+**KPI:**
+- CTR روی CTA Primary: هدف +۴٪ (بالاترین در صفحه)
+- Consultation Bookings: هدف +۵٪ از بازدیدکنندگان خانه
+
+---
+
+**حس نهایی:**
+> «این بهترین زمان برای شروع همکاری است.»
+
+---
+---
+
+## راهنمای پیاده‌سازی صفحه خانه (برای توسعه‌دهنده)
+
+### URL
+- **Slug:** `/`
+- **Title Tag:** کارنووب | طراحی سایت، سئو، ERP و سامانه‌های سازمانی
+- **Meta Description:** کارنووب شریک رشد دیجیتال کسب‌وکارهاست — طراحی سایت، سئو، اپلیکیشن، ERP و CRM. مشاوره رایگان بگیرید.
+- **Schema:** Organization + WebSite + SiteLinksSearchBox
+
+### Performance Targets
+- LCP: زیر ۲.۵ ثانیه (Hero image Critical — no Lazy Load)
+- FID: زیر ۱۰۰ms
+- CLS: زیر ۰.۱
+- Time to Interactive: زیر ۵ ثانیه
+
+### Lazy Load Rules
+- Hero Image/Video: **NO** Lazy Load
+- بقیه تصاویر: Lazy Load
+- Fonts: Preload برای Display Font
+
+### سئو صفحه خانه
+- H1: فقط یک H1 — در Hero (تیتر اصلی)
+- H2: عنوان هر سکشن
+- Internal Links: از خانه به همه صفحات اصلی
+- Canonical: `https://karnoweb.com/`
+
+### Query String ردیابی CTAها
+هر CTA در صفحه خانه باید `?source=home-[section]` داشته باشد تا در CRM بدانیم کاربر از کجا اقدام کرده:
+- `home-hero`, `home-services`, `home-products`, `home-why`
+- `home-process`, `home-casestudy`, `home-lead-magnet`, `home-final-cta`

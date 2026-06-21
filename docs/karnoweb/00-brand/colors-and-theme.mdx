@@ -1,0 +1,177 @@
+## سیستم رنگ، تایپوگرافی و بصری
+
+### فلسفه طراحی بصری
+
+کارنووب باید در نگاه اول حس «SaaS حرفه‌ای» بدهد — نه آژانس طراحی. نه رنگارنگ، نه شلوغ. مدرن، تمیز، قابل اعتماد. مثل Notion، Linear یا Vercel — اما با گرمای مناسب بازار ایران.
+
+---
+
+### سیستم رنگ
+
+#### رنگ‌های اصلی
+
+| نام | HEX | کاربرد |
+|-----|-----|---------|
+| **Brand Blue** | `#1A56DB` | CTA اصلی، لینک‌های فعال، Highlight |
+| **Dark Navy** | `#0F172A` | عنوان‌های اصلی، متن سنگین |
+| **Off-White** | `#F8FAFC` | پس‌زمینه صفحات روشن |
+| **Pure White** | `#FFFFFF` | کارت‌ها، پنل‌ها |
+
+#### رنگ‌های ثانویه
+
+| نام | HEX | کاربرد |
+|-----|-----|---------|
+| **Accent Indigo** | `#4F46E5` | Gradient با Brand Blue، Hover |
+| **Slate 600** | `#475569` | متن توضیحی، زیرعنوان |
+| **Slate 300** | `#CBD5E1` | Border، Divider، Placeholder |
+| **Slate 100** | `#F1F5F9` | پس‌زمینه سکشن متناوب |
+
+#### رنگ‌های وضعیت
+
+| وضعیت | HEX | کاربرد |
+|--------|-----|---------|
+| Success | `#10B981` | موفقیت، تیک، موجود |
+| Warning | `#F59E0B` | هشدار، توجه |
+| Error | `#EF4444` | خطا، ضروری |
+| Info | `#3B82F6` | اطلاعات، نکته |
+
+#### Gradient‌های برند
+
+```css
+/* Gradient اصلی — برای Hero و CTA */
+background: linear-gradient(135deg, #1A56DB 0%, #4F46E5 100%);
+
+/* Gradient تیره — برای بخش‌های Dark */
+background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+
+/* Gradient روشن — برای کارت‌ها */
+background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+
+/* Gradient Glow — زیر CTA */
+box-shadow: 0 0 60px rgba(26, 86, 219, 0.3);
+```
+
+---
+
+### تایپوگرافی
+
+#### فونت‌ها
+
+| نقش | فونت فارسی | فونت انگلیسی | وزن |
+|------|------------|---------------|------|
+| **Display (عنوان بزرگ)** | IRANSans ExtraBold | Inter | 800 |
+| **Heading (عنوان سکشن)** | IRANSans Bold | Inter | 700 |
+| **Body (متن اصلی)** | IRANSans | Inter | 400 |
+| **UI (دکمه، Label)** | IRANSans Medium | Inter | 500 |
+| **Caption (زیرنویس)** | IRANSans | Inter | 400 |
+
+#### مقیاس تایپوگرافی
+
+```css
+/* Display — Hero Headline */
+font-size: clamp(2.5rem, 5vw, 4rem);
+line-height: 1.15;
+letter-spacing: -0.02em;
+
+/* H1 — Page Title */
+font-size: clamp(2rem, 4vw, 3rem);
+line-height: 1.2;
+
+/* H2 — Section Title */
+font-size: clamp(1.5rem, 3vw, 2.25rem);
+line-height: 1.3;
+
+/* H3 — Card Title */
+font-size: clamp(1.125rem, 2vw, 1.5rem);
+line-height: 1.4;
+
+/* Body Large */
+font-size: 1.125rem; /* 18px */
+line-height: 1.75;
+
+/* Body */
+font-size: 1rem; /* 16px */
+line-height: 1.7;
+
+/* Small / Caption */
+font-size: 0.875rem; /* 14px */
+line-height: 1.6;
+```
+
+---
+
+### سیستم فاصله‌گذاری (Spacing)
+
+```css
+/* Base unit: 4px */
+--space-1:  4px;
+--space-2:  8px;
+--space-3:  12px;
+--space-4:  16px;
+--space-6:  24px;
+--space-8:  32px;
+--space-12: 48px;
+--space-16: 64px;
+--space-24: 96px;
+--space-32: 128px;
+
+/* Section Padding */
+--section-padding-y: clamp(64px, 10vw, 128px);
+--section-padding-x: clamp(16px, 5vw, 80px);
+
+/* Container Max-Width */
+--container-max: 1280px;
+--container-narrow: 900px;
+```
+
+---
+
+### Border Radius
+
+```css
+--radius-sm:   6px;   /* Input، Tag */
+--radius-md:   12px;  /* کارت کوچک */
+--radius-lg:   16px;  /* کارت اصلی */
+--radius-xl:   24px;  /* Modal، بخش Hero */
+--radius-full: 9999px; /* Badge، Pill Button */
+```
+
+---
+
+### سایه‌ها (Shadows)
+
+```css
+--shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+--shadow-md:  0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.06);
+--shadow-lg:  0 10px 30px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.06);
+--shadow-xl:  0 20px 60px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.08);
+
+/* Shadow رنگی برای CTA */
+--shadow-brand: 0 8px 30px rgba(26, 86, 219, 0.35);
+```
+
+---
+
+### سیستم آیکون
+
+- **Library اصلی:** Heroicons v2 (Outline برای UI، Solid برای تاکید)
+- **Size استاندارد:** 20px برای UI، 24px برای Feature، 48px برای Section Icon
+- **رنگ:** از پالت رنگی برند — هرگز رنگ‌های خارج از سیستم نه
+
+---
+
+### قوانین بصری (Do / Don't)
+
+**✓ DO:**
+- Dashboard و UI Mockup واقعی در ویژوال‌ها
+- Glassmorphism ملایم روی Dark Background
+- Gradient از Brand Blue به Accent Indigo
+- Floating Cards با Shadow
+- Counter Animation برای اعداد
+
+**✗ DON'T:**
+- عکس استاک (Stock Photos) به‌جای محتوای واقعی
+- بیش از ۳ رنگ در یک سکشن
+- Animation سنگین که سرعت را کم کند
+- Font Size زیر ۱۴px
+- Button بدون Hover State
