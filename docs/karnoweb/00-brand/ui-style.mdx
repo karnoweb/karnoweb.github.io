@@ -1,6 +1,237 @@
 ---
 id: 00-brand-ui-style
-title: Ui Style
+title: استایل
 slug: /karnoweb/00-brand/ui-style
+sidebar_position: 7
 ---
 
+> هدف: UI مدرنِ SaaS/Enterprise با حس تکنیکال، تمیز، سریع، و Conversion-oriented.  
+> اصل اجرا: **هیچ رنگ/اندازه‌ای در UI به صورت دلخواه هاردکد نشود**؛ همه‌چیز از توکن‌های `colors-and-theme.md` و `typography.md` بیاید.
+
+---
+
+## اصول (Principles)
+
+1) **Clarity > Cleverness**  
+هر سکشن باید در ۳ ثانیه قابل فهم باشد: «چی هست؟ برای کیه؟ چه نتیجه‌ای می‌ده؟ قدم بعدی چیه؟»
+
+2) **System-first**  
+کامپوننت‌ها (Button/Card/Badge/Form) باید از توکن‌ها تغذیه شوند.
+
+3) **Show the real thing**  
+ویژوال اصلی: Screenshot واقعی داشبورد/پنل/محصول، نه Stock Photo.
+
+4) **Conversion by design**  
+CTA کم، واضح، مرحله‌ای. CTA اصلی در صفحات مارکتینگ «warm» است، اما در Dashboard «cool».
+
+---
+
+## توکن‌ها (Source of truth)
+
+### رنگ/گرادیان/سایه (از `colors-and-theme.md`)
+- `--gradient-cool`
+- `--gradient-warm`
+- `--gradient-dark`
+- `--gradient-light`
+- `--hero-bg`
+- `--shadow-brand-cool`
+- `--shadow-brand-warm`
+- سایه‌های عمومی: `--shadow-sm`, `--shadow-md`, `--shadow-lg`, `--shadow-xl`
+
+### تایپوگرافی (از `typography.md`)
+- `--font-fa`, `--font-en`, `--font-mono`
+- مقیاس‌ها و line-height طبق جدول Typography
+
+### فواصل/کانتینر/رادیوس (از `colors-and-theme.md`)
+- Spacing: `--space-*`, `--section-padding-x`, `--section-padding-y`
+- Container: `--container-max`, `--container-narrow`
+- Radius: `--radius-sm`, `--radius-md`, `--radius-lg`, `--radius-xl`, `--radius-full`
+
+> قانون: در UI Style **HEX ننویسید**. اگر مجبور شدید، یعنی توکن کم داریم و باید به `colors-and-theme.md` اضافه شود.
+
+---
+
+## Layout & Grid
+
+- Container: `max-width: var(--container-max)` و برای صفحات متنی `var(--container-narrow)`
+- Section padding:
+  - `padding-inline: var(--section-padding-x)`
+  - `padding-block: var(--section-padding-y)`
+- گرید پیشنهادی: 12 ستون روی Desktop، 4 ستون روی Mobile
+- هر سکشن مارکتینگ:
+  - Headline (H2)
+  - Supporting copy (Body)
+  - Proof/Visual (Logos, Metrics, Screenshot)
+  - CTA (Primary/Secondary)
+
+---
+
+## Surfaces (پس‌زمینه‌ها و عمق)
+
+### Light Mode
+- Background: سفید/Off-white (طبق سیستم رنگ)
+- Card surface: سفید + border ظریف + `--shadow-sm` یا `--shadow-md`
+- سکشن‌های متناوب: استفاده از حس `--gradient-light` یا Slate 100 (طبق سیستم رنگ)
+
+### Dark Mode
+- Background: `--gradient-dark` یا پس‌زمینه navy
+- Card surface: یک درجه روشن‌تر/تیره‌تر از بک‌گراند + `--shadow-lg`
+- Glow: فقط برای نقاط مهم (Hero / CTA) با `--hero-bg` یا shadowهای رنگی
+
+---
+
+## Button System (دکمه‌ها) — استاندارد نقش‌ها
+
+### نقش‌ها
+1) **Primary CTA (Marketing):** Warm  
+   - Background: `--gradient-warm` یا Solid warm token
+   - Shadow: `--shadow-brand-warm`
+
+2) **Primary (Product/Dashboard):** Cool  
+   - Background: `--gradient-cool` یا Brand Blue token
+   - Shadow: `--shadow-brand-cool`
+
+3) **Secondary (Outline):**
+   - Border: Slate 300 (توکن خنثی)
+   - Text: Brand Blue (توکن)
+   - Hover: پس‌زمینه خیلی ملایم (توکن Light)
+
+4) **Ghost / Text Button:**
+   - رنگ متن: Brand Blue
+   - Hover: زیرخط/پس‌زمینه بسیار کم‌رنگ
+
+### قواعد
+- Radius: `var(--radius-md)` (پیشنهاد پیش‌فرض برای دکمه‌ها)
+- Height: 44–48px (برای دسترس‌پذیری)
+- Focus ring: همیشه قابل مشاهده (رنگ سرد برای UI، گرم فقط برای CTA مارکتینگ)
+- متن دکمه: فعل‌محور، کوتاه (مثلاً «درخواست دمو»، «مشاهده نمونه‌کارها»)
+
+---
+
+## Forms (فرم‌ها)
+
+- Input height: 44–48px
+- Radius: `--radius-md`
+- Border: Slate 300 (توکن)
+- Focus: Highlight سرد (Brand Blue/Indigo)
+- Error:
+  - پیام کوتاه + راهنمای اصلاح
+  - از لحن ترساننده پرهیز شود
+- Placeholder: راهنما، نه تکرار Label
+
+> فرم‌ها باید برای «ثبت لید» friction کم داشته باشند؛ تعداد فیلدهای اولیه حداقلی باشد.
+
+---
+
+## Card System (کارت‌ها)
+
+### ساختار کارت استاندارد
+- Header: Icon (20/24px) یا Screenshot کوچک
+- Title: H3
+- Copy: 1–2 خط
+- Bullets: 2–4 مورد (اسکن‌پذیر)
+- CTA کوچک: «جزئیات» / «درخواست دمو»
+
+### Hover استاندارد (حداقل)
+- Shadow: از `--shadow-sm` به `--shadow-md` یا `--shadow-lg`
+- Translate: حداکثر 2px (اختیاری)
+- Border glow: بسیار ملایم (ترجیحاً سرد)
+
+---
+
+## Badges & Tags
+
+- Radius: `--radius-full`
+- استفاده:
+  - وضعیت‌ها: New / Beta / Enterprise
+  - ویژگی‌ها: API-First / Cloud Ready / AI-Ready
+- رنگ:
+  - Badgeها باید از **توکن‌های semantic** بیایند (نه رنگ‌های تصادفی)
+  - Yellow فقط برای highlight پس‌زمینه Badge (با متن تیره)
+
+---
+
+## Iconography
+
+- Library: Heroicons v2
+- Size:
+  - UI: 20px
+  - Feature: 24px
+  - Section: 48px
+- Style:
+  - Outline برای UI
+  - Solid برای تاکید محدود
+- رنگ آیکون‌ها: از توکن‌های سرد یا Accentهای کنترل‌شده
+
+---
+
+## Visual Motifs (Motifهای برند)
+
+با الهام از لوگو:
+- **Nodes/Paths** (نقاط و خطوط) به صورت پس‌زمینه بسیار کم‌رنگ
+- **Forward arrow / path** به عنوان motif حرکت/پیشرفت
+- **Warm glow** فقط نزدیک CTA و نقطه تبدیل (نه همه‌جا)
+
+---
+
+## Motion & Interaction (انیمیشن)
+
+### قوانین
+- انیمیشن باید «Feedback» بدهد (Hover/Focus/Reveal)، نه نمایش.
+- زمان‌ها:
+  - Fast: 150ms
+  - Normal: 220ms
+  - Slow: 320ms
+
+### مجاز
+- Fade + translate کوچک (stagger سبک)
+- Hover micro-interactions روی کارت/دکمه
+- Counter animation برای اعداد (خیلی سبک)
+
+### غیرمجاز
+- Parallax سنگین
+- Canvas/WebGL در Hero (اگر LCP را خراب کند)
+- انیمیشن‌های دائمی و پرتکرار
+
+### Reduced motion
+- `prefers-reduced-motion` باید رعایت شود (انیمیشن‌ها خاموش یا ساده شوند)
+
+---
+
+## Accessibility (حداقل استاندارد)
+
+- کنتراست متن/پس‌زمینه بررسی شود (به‌خصوص در Dark Mode)
+- Focus state حذف نشود
+- فرم‌ها با کیبورد کامل قابل استفاده باشند
+- متن زیر 14px ممنوع (طبق Typography)
+
+---
+
+## Performance (استاندارد تجربه)
+
+- هدف LCP: زیر 2.5 ثانیه (صفحات مارکتینگ)
+- تصاویر:
+  - WebP/AVIF
+  - Lazy-load به جز عنصر LCP
+- JS:
+  - از کتابخانه‌های سنگین برای صفحات مارکتینگ پرهیز شود
+- Screenshotها:
+  - واقعی، فشرده، با ابعاد درست
+
+---
+
+## چک‌لیست اجرای Token-first (قبل از PR)
+
+- [ ] هیچ HEX مستقیم داخل کامپوننت‌ها نیست
+- [ ] دکمه‌ها فقط با نقش‌ها (CTA warm / primary cool / secondary / ghost) ساخته شده‌اند
+- [ ] spacing/radius/shadow از توکن‌ها استفاده می‌کند
+- [ ] Dark/Light هر دو قابل استفاده و خوانا هستند
+- [ ] Focus ring و reduced-motion رعایت شده
+
+---
+
+## فایل‌های مرتبط
+
+- `00-brand/colors-and-theme.md`
+- `00-brand/typography.md`
+- `00-brand/brand-voice.md`

@@ -1,60 +1,125 @@
 ---
 id: 00-brand-colors-and-theme
-title: Colors And Theme
+title: سیستم رنگ
 slug: /karnoweb/00-brand/colors-and-theme
+sidebar_position: 6
 ---
 
 ## سیستم رنگ، تایپوگرافی و بصری
 
 ### فلسفه طراحی بصری
 
-کارنووب باید در نگاه اول حس «SaaS حرفه‌ای» بدهد — نه آژانس طراحی. نه رنگارنگ، نه شلوغ. مدرن، تمیز، قابل اعتماد. مثل Notion، Linear یا Vercel — اما با گرمای مناسب بازار ایران.
+طراحی کارنووب باید در نگاه اول حس «SaaS حرفه‌ای» بدهد — نه آژانس طراحی.
+نه رنگارنگ، نه شلوغ. مدرن، تمیز، قابل اعتماد.
+مثل Notion، Linear یا Vercel — اما با گرمای کنترل‌شده و هدفمند برای بازار ایران.
+
+**اصل کلیدی:** رنگ‌های گرمِ لوگو فقط برای «اکشن و تبدیل» استفاده می‌شوند، نه برای کل UI.
 
 ---
 
 ### سیستم رنگ
 
-#### رنگ‌های اصلی
+#### پالت پایه (Core UI / SaaS)
 
 | نام | HEX | کاربرد |
-|-----|-----|---------|
-| **Brand Blue** | `#1A56DB` | CTA اصلی، لینک‌های فعال، Highlight |
-| **Dark Navy** | `#0F172A` | عنوان‌های اصلی، متن سنگین |
-| **Off-White** | `#F8FAFC` | پس‌زمینه صفحات روشن |
-| **Pure White** | `#FFFFFF` | کارت‌ها، پنل‌ها |
+|-----|-----|--------|
+| **Brand Blue** | `#1A56DB` | لینک‌ها، حالت فعال، CTAهای عمومی، Highlight |
+| **Accent Indigo** | `#4F46E5` | Hover/Focus، گرادیان سرد، تاکیدهای UI |
+| **Dark Navy** | `#0F172A` | پس‌زمینه Dark، تیترهای سنگین، بخش‌های Enterprise |
+| **Off-White** | `#F8FAFC` | پس‌زمینه Light، سکشن‌های روشن |
+| **Pure White** | `#FFFFFF` | کارت‌ها، پنل‌ها، Surface اصلی |
 
-#### رنگ‌های ثانویه
+#### خنثی‌ها (Neutrals)
 
 | نام | HEX | کاربرد |
-|-----|-----|---------|
-| **Accent Indigo** | `#4F46E5` | Gradient با Brand Blue، Hover |
-| **Slate 600** | `#475569` | متن توضیحی، زیرعنوان |
+|-----|-----|--------|
+| **Slate 600** | `#475569` | متن توضیحی، زیرعنوان، متا |
 | **Slate 300** | `#CBD5E1` | Border، Divider، Placeholder |
-| **Slate 100** | `#F1F5F9` | پس‌زمینه سکشن متناوب |
+| **Slate 100** | `#F1F5F9` | پس‌زمینه سکشن متناوب، کارت Light ثانویه |
 
-#### رنگ‌های وضعیت
+#### سیستم Accent برگرفته از لوگو (Logo-derived Accents)
 
-| وضعیت | HEX | کاربرد |
-|--------|-----|---------|
-| Success | `#10B981` | موفقیت، تیک، موجود |
-| Warning | `#F59E0B` | هشدار، توجه |
-| Error | `#EF4444` | خطا، ضروری |
-| Info | `#3B82F6` | اطلاعات، نکته |
+این رنگ‌ها «هویت لوگو» را وارد UI می‌کنند، اما باید **کم‌مصرف و هدفمند** باشند.
+
+| نام | HEX | نقش |
+|-----|-----|-----|
+| **Action Orange** | `#F16B22` | CTA اصلی، دکمه اقدام، نقاط تبدیل |
+| **Emphasis Red-Orange** | `#E43D30` | تاکید محدود (Badge/Alert marketing)، نه برای مصرف زیاد |
+| **Highlight Yellow** | `#FBD246` | Highlight/Badge پس‌زمینه، تاکید تصویری |
+| **Tech Sky (Cool Accent)** | `#75AEDD` | Accent سرد برای جزئیات UI، Illustration، Graph |
+| **Logo Deep Blue (Optional)** | `#2B4996` | جایگزین/تکمیل برای پس‌زمینه‌های برند یا گراف‌ها (اختیاری) |
+
+> نکته: این‌ها رنگ‌های «مبنای طراحی» هستند. اگر در Figma با Eyedropper از فایل لوگو رنگ دقیق‌تری استخراج شد، همین نام‌ها را نگه دارید و فقط HEX را آپدیت کنید تا سیستم شکسته نشود.
+
+#### تخصیص معنایی (Semantic Mapping)
+
+برای جلوگیری از سلیقه‌ای شدن، رنگ‌ها باید «معنا» داشته باشند:
+
+- **Primary (UI):** Brand Blue
+- **Secondary (UI):** Accent Indigo
+- **Background (Dark):** Dark Navy
+- **CTA / Conversion:** Action Orange (در مارکتینگ سایت)
+- **Highlights:** Highlight Yellow (ترجیحاً پس‌زمینه Badge، نه متن)
+- **Decorative Tech:** Tech Sky (برای خطوط، نمودارها، backdropهای ملایم)
+
+#### قوانین استفاده (Usage Rules)
+
+- **قاعده 70/20/10**
+  - 70% خنثی‌ها (Off-White / White / Slateها)
+  - 20% رنگ‌های سرد UI (Brand Blue / Accent Indigo / Dark Navy)
+  - 10% رنگ‌های لوگو (Orange/Yellow/Red-Orange/Tech Sky)
+
+- **حداکثر ۳ رنگ در هر سکشن** (به‌جز خنثی‌ها و خاکستری متن).
+- **لینک‌ها همیشه آبی** (Brand Blue). اگر لینک نارنجی شود، CTAها قدرت بصری‌شان را از دست می‌دهند.
+- **CTA اصلی در سایت مارکتینگ: نارنجی** (Action Orange)  
+  **CTA ثانویه: آبی (Outline یا Solid)**
+- **Dashboard / Client Panel:** CTAهای روتین بهتر است آبی باشند؛ نارنجی فقط برای Upsell/Upgrade/Trial/Conversion.
+- **نارنجی/قرمز را به‌عنوان رنگ متن روی پس‌زمینه روشن استفاده نکنید** مگر با تست کنتراست و اندازه متن مناسب.
+
+#### Light / Dark Mode (راهنمای سریع)
+
+**Light Mode**
+- Background: Off-White / White
+- Text: Dark Navy + Slate 600
+- Primary UI: Brand Blue
+- CTA: Action Orange (کم‌مصرف و مشخص)
+
+**Dark Mode**
+- Background: Dark Navy + Slate‌های تیره
+- Text: White / نزدیک به White
+- Primary UI: Brand Blue / Accent Indigo
+- CTA: Action Orange + Glow کنترل‌شده
 
 #### Gradient‌های برند
 
 ```css
-/* Gradient اصلی — برای Hero و CTA */
-background: linear-gradient(135deg, #1A56DB 0%, #4F46E5 100%);
+/* Cool Gradient (پایه محصول/سرویس) */
+--gradient-cool: linear-gradient(135deg, #1A56DB 0%, #4F46E5 100%);
 
-/* Gradient تیره — برای بخش‌های Dark */
-background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+/* Dark Gradient (پس‌زمینه تیره حرفه‌ای) */
+--gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
 
-/* Gradient روشن — برای کارت‌ها */
-background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+/* Light Gradient (Surface / Card background) */
+--gradient-light: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
 
-/* Gradient Glow — زیر CTA */
-box-shadow: 0 0 60px rgba(26, 86, 219, 0.3);
+/* Warm Gradient (CTAهای خیلی مهم / Campaign) */
+--gradient-warm: linear-gradient(135deg, #FBD246 0%, #F16B22 45%, #E43D30 100%);
+
+/* Hero Background پیشنهادی (Dark + Glow کنترل‌شده) */
+--hero-bg:
+  radial-gradient(700px circle at 20% 10%, rgba(241, 107, 34, 0.28), transparent 60%),
+  radial-gradient(900px circle at 80% 20%, rgba(26, 86, 219, 0.25), transparent 55%),
+  linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+```
+
+#### Glow / Shadow سیستم‌مند
+
+```css
+/* Shadow رنگی سرد برای CTA/المان‌های Primary */
+--shadow-brand-cool: 0 8px 30px rgba(26, 86, 219, 0.35);
+
+/* Shadow رنگی گرم برای CTAهای Conversion */
+--shadow-brand-warm: 0 12px 40px rgba(241, 107, 34, 0.30);
 ```
 
 ---
@@ -110,12 +175,12 @@ line-height: 1.6;
 
 ```css
 /* Base unit: 4px */
---space-1:  4px;
---space-2:  8px;
---space-3:  12px;
---space-4:  16px;
---space-6:  24px;
---space-8:  32px;
+--space-1: 4px;
+--space-2: 8px;
+--space-3: 12px;
+--space-4: 16px;
+--space-6: 24px;
+--space-8: 32px;
 --space-12: 48px;
 --space-16: 64px;
 --space-24: 96px;
@@ -135,10 +200,10 @@ line-height: 1.6;
 ### Border Radius
 
 ```css
---radius-sm:   6px;   /* Input، Tag */
---radius-md:   12px;  /* کارت کوچک */
---radius-lg:   16px;  /* کارت اصلی */
---radius-xl:   24px;  /* Modal، بخش Hero */
+--radius-sm: 6px;   /* Input، Tag */
+--radius-md: 12px;  /* کارت کوچک */
+--radius-lg: 16px;  /* کارت اصلی */
+--radius-xl: 24px;  /* Modal، بخش Hero */
 --radius-full: 9999px; /* Badge، Pill Button */
 ```
 
@@ -147,13 +212,10 @@ line-height: 1.6;
 ### سایه‌ها (Shadows)
 
 ```css
---shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
---shadow-md:  0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.06);
---shadow-lg:  0 10px 30px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.06);
---shadow-xl:  0 20px 60px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.08);
-
-/* Shadow رنگی برای CTA */
---shadow-brand: 0 8px 30px rgba(26, 86, 219, 0.35);
+--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+--shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+--shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.10), 0 4px 8px rgba(0, 0, 0, 0.06);
+--shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.08);
 ```
 
 ---
@@ -171,13 +233,15 @@ line-height: 1.6;
 **✓ DO:**
 - Dashboard و UI Mockup واقعی در ویژوال‌ها
 - Glassmorphism ملایم روی Dark Background
-- Gradient از Brand Blue به Accent Indigo
+- Gradient سرد از Brand Blue به Accent Indigo (در UI)
+- استفاده کنترل‌شده از Warm Gradient فقط برای CTAهای خیلی مهم
 - Floating Cards با Shadow
-- Counter Animation برای اعداد
+- Counter Animation برای اعداد (سبک و سریع)
 
 **✗ DON'T:**
 - عکس استاک (Stock Photos) به‌جای محتوای واقعی
-- بیش از ۳ رنگ در یک سکشن
+- بیش از ۳ رنگ (غیر از خنثی‌ها) در یک سکشن
 - Animation سنگین که سرعت را کم کند
 - Font Size زیر ۱۴px
-- Button بدون Hover State
+- Button بدون Hover/Focus state
+- تبدیل کل سایت به پالت گرم (CTA باید «خاص» بماند)

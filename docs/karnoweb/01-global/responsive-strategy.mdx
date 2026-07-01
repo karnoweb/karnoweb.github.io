@@ -1,6 +1,81 @@
 ---
 id: 01-global-responsive-strategy
-title: Responsive Strategy
+title: استراتژی ریسپانسیو
 slug: /karnoweb/01-global/responsive-strategy
+sidebar_position: 11
 ---
 
+# استراتژی ریسپانسیو (Responsive Strategy)
+
+هدف:
+- تجربه موبایل «اولویت» باشد (بخش زیادی از ترافیک)
+- UI در همه اندازه‌ها شفاف و قابل استفاده بماند
+- فشردگی بیش از حد باعث افت تبدیل نشود
+
+---
+
+## Breakpoint های پیشنهادی (اجرایی)
+
+- Mobile: تا 640px
+- Tablet: 641px تا 1024px
+- Desktop: 1025px تا 1280px
+- Large: بالاتر از 1280px
+
+قانون:
+- طراحی به جای «دستگاه»، بر اساس «عرض محتوا» تصمیم بگیرد.
+
+---
+
+## قواعد عمومی موبایل
+
+- اندازه لمس (Tap target): حداقل 44px
+- فاصله بین CTAها: حداقل 12px
+- متن بدنه: حداقل 16px
+- فرم‌ها: ورودی‌ها تمام‌عرض + کیبورد مناسب نوع فیلد
+
+---
+
+## تبدیل Layout در سکشن‌ها
+
+### Gridها
+- Desktop: 3 یا 4 ستون
+- Tablet: 2 ستون
+- Mobile: 1 ستون
+
+### جدول‌ها (Pricing/Comparison)
+- Desktop: جدول کامل
+- Mobile:
+  - Accordion per feature یا per plan
+  - یا Card-based comparison
+
+### Hero
+- ترتیب: تیتر → زیرتیتر → CTA → اعتمادساز → تصویر
+- تصویر Hero در موبایل باید سبک و کم‌حجم باشد
+
+---
+
+## Header و Navigation در موبایل
+- Hamburger + Slide-in
+- Accordion برای خدمات/محصولات
+- CTA ثابت و واضح (رزرو جلسه/درخواست دمو)
+
+---
+
+## تصاویر و مدیا
+- فرمت: WebP/AVIF
+- Lazy-load برای همه به‌جز عنصر LCP
+- تصاویر داشبورد: Crop درست برای موبایل (زیادی ریز نشوند)
+
+---
+
+## Performance
+- هدف LCP: زیر 2.5 ثانیه در موبایل
+- از انیمیشن‌های سنگین و کتابخانه‌های حجیم اجتناب شود
+
+---
+
+## چک‌لیست تست
+- iPhone سایز کوچک
+- Android میان‌رده
+- Tablet
+- Desktop 1366 و 1920

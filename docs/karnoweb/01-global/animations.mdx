@@ -1,6 +1,137 @@
 ---
 id: 01-global-animations
-title: Animations
+title: انیمیشن‌ها
 slug: /karnoweb/01-global/animations
+sidebar_position: 10
 ---
 
+# انیمیشن‌ها و Motion System
+
+هدف این سند این است که Motion در کل سایت کارنووب:
+- مدرن و SaaS-محور باشد (نه نمایشی و سنگین)
+- به «فهم» و «تبدیل» کمک کند
+- به Core Web Vitals آسیب نزند
+- برای تیم اجرا یک استاندارد ثابت بسازد
+
+---
+
+## اصول (Principles)
+
+1) **Motion برای وضوح است، نه تزئین**
+- انیمیشن باید یک کار انجام دهد: هدایت نگاه، تایید اقدام، یا کاهش بار شناختی.
+
+2) **کم، سریع، قابل پیش‌بینی**
+- سایت باید «حرفه‌ای و Enterprise» حس شود، نه بازی‌گونه.
+
+3) **عملکرد و دسترس‌پذیری در اولویت**
+- اگر انیمیشن LCP/INP را خراب کند یا کاربران حساس به حرکت را اذیت کند، حذف می‌شود.
+
+---
+
+## زمان‌ها (Durations)
+
+- سریع (Fast): `150ms`
+- استاندارد (Normal): `220ms`
+- کند (Slow): `320ms`
+
+قانون: بیش از `320ms` برای UI مارکتینگ ممنوع (به‌جز ویدئوهای مستقل یا دمو).
+
+---
+
+## Easing پیشنهادی
+
+- `cubic-bezier(0.2, 0.8, 0.2, 1)` برای Hover/Reveal
+- `ease-out` برای ورود عناصر (Enter)
+- `ease-in` برای خروج عناصر (Exit)
+
+---
+
+## الگوهای مجاز (Allowed Patterns)
+
+### 1) Reveal روی اسکرول (Scroll Reveal)
+کاربرد:
+- سکشن‌ها، کارت‌ها، آیکون‌ها، لوگوها
+
+الگو:
+- `opacity: 0 → 1`
+- `translateY: 8px → 0`
+- با Stagger سبک برای Gridها (مثلاً 40ms فاصله بین کارت‌ها)
+
+قانون:
+- اگر تعداد عناصر زیاد است، فقط برای 6–8 عنصر اول.
+
+---
+
+### 2) Hover برای Card و Button
+**Card Hover**
+- افزایش Shadow (مثلاً از `--shadow-sm` به `--shadow-md`)
+- `transform: translateY(-2px)` (اختیاری)
+
+**Button Hover**
+- روشن/تیره شدن بسیار ملایم
+- Shadow رنگی فقط برای CTAهای مهم
+
+---
+
+### 3) Feedback برای فرم‌ها
+- Focus ring واضح (برای کیبورد)
+- حالت Success/Error با متن کوتاه و قابل فهم
+- Shake ممنوع (حس خطا را بدتر می‌کند)
+
+---
+
+### 4) Counter Animation برای اعداد
+کاربرد:
+- KPIها، نتایج نمونه‌کارها، آمارهای اعتمادساز
+
+قانون:
+- 600ms تا 900ms
+- فقط وقتی عنصر وارد viewport شد
+- اگر کاربر `prefers-reduced-motion` دارد، بدون انیمیشن نمایش داده شود
+
+---
+
+## الگوهای غیرمجاز (Disallowed Patterns)
+
+- Parallax سنگین
+- Loop دائمی در Hero
+- Canvas/WebGL به عنوان بک‌گراند Hero (اگر LCP را خراب کند)
+- انیمیشن‌های «پرش» و «تکان» (خارج از UI-Feedback استاندارد)
+
+---
+
+## Dark Mode Glow (کنترل‌شده)
+
+در Dark Mode مجاز است برای CTA و Hero از Glow کنترل‌شده استفاده شود:
+- Glow گرم فقط نزدیک CTA
+- Glow سرد برای حس تکنیکال
+
+قانون:
+- Glow نباید خوانایی متن را کم کند
+- نباید باعث banding یا نویز زیاد شود
+
+---
+
+## Reduced Motion (الزامی)
+
+برای کاربرانی که حرکت را کم می‌خواهند:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+```
+
+---
+
+## چک‌لیست QA قبل از Merge
+
+- [ ] Motion باعث کندی اسکرول نشده
+- [ ] روی موبایل «لگ» ایجاد نمی‌کند
+- [ ] عناصر مهم (CTA/فرم) بدون Motion هم واضح هستند
+- [ ] prefers-reduced-motion رعایت شده
+- [ ] انیمیشن‌ها تکراری/شلوغ نیستند

@@ -1,9 +1,8 @@
 {
-  "label": "نقشه سایت",
-  "position": 9,
+  "label": "ساختار سراسری",
+  "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "دسترسی سریع به صفحات و مسیرهای اصلی سایت"
+    "description": "ناوبری، قیف تبدیل، CTA، سئو و استانداردهای مشترک کل سایت"
   }
 }
-

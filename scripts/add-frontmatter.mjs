@@ -24,9 +24,7 @@ const mdxFiles = getMdxFiles(baseDir);
 
 mdxFiles.forEach((filePath) => {
     const content = fs.readFileSync(filePath, 'utf8');
-    // Check if front‑matter already contains an id field
-    const hasId = /^---\s*\n(?:[^\n]*\n)*?id:/m.test(content);
-    if (hasId) return; // skip files that already have proper front‑matter
+    // Always (re)write front‑matter to ensure sidebar_position and title updates
 
     // Derive id and slug from relative path
     const relPath = path.relative(baseDir, filePath);
@@ -39,7 +37,11 @@ mdxFiles.forEach((filePath) => {
         .replace(/[-_]/g, ' ')
         .replace(/\b\w/g, (c) => c.toUpperCase());
 
-    const frontMatter = `---\nid: ${id}\ntitle: ${title}\nslug: ${slug}\n---\n\n`;
+    // Determine sidebar_position: overview pages get 1, others get 0 (can be adjusted later)
+    const isOverview = /overview$/i.test(path.basename(filePath, '.mdx'));
+    const sidebarPosition = isOverview ? 1 : 0;
+    // Title translation placeholder – keep original title for now (could be replaced manually)
+    const frontMatter = `---\nid: ${id}\ntitle: ${title}\nslug: ${slug}\nsidebar_position: ${sidebarPosition}\n---\n\n`;
     fs.writeFileSync(filePath, frontMatter + content, 'utf8');
     console.log(`Added front‑matter to ${filePath}`);
 });

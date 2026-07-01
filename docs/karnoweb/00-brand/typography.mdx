@@ -1,6 +1,84 @@
 ---
 id: 00-brand-typography
-title: Typography
+title: تایپوگرافی
 slug: /karnoweb/00-brand/typography
 ---
 
+> هدف: خوانایی بالا، حس SaaS/Enterprise، و یکپارچگی فارسی/انگلیسی.
+> تایپوگرافی کارنووب باید «تمیز، دقیق، و نتیجه‌محور» حس شود.
+
+---
+
+## اصول (Principles)
+
+- متن باید سریع خوانده شود (Scan-friendly).
+- تیترها باید «وعده/نتیجه» را سریع منتقل کنند.
+- در هر سکشن، ۱ پیام اصلی. باقی متن کوتاه و پشتیبان.
+
+---
+
+## فونت‌ها (Font Families)
+
+### فارسی (Primary)
+- **IRANSans** (در صورت داشتن لایسنس معتبر)
+- Fallbackها:
+  - `Vazirmatn`
+  - `Tahoma`
+  - `Arial`
+
+### انگلیسی (Primary)
+- **Inter**
+- Fallback:
+  - `system-ui`, `-apple-system`, `Segoe UI`, `Roboto`, `Arial`
+
+### Monospace (برای کد/تکنیکال)
+- `ui-monospace`, `SFMono-Regular`, `Menlo`, `Monaco`, `Consolas`, `Liberation Mono`, `Courier New`, `monospace`
+
+---
+
+## CSS پیشنهادی (Font Stack)
+
+```css
+:root {
+  --font-fa: IRANSans, Vazirmatn, Tahoma, Arial, sans-serif;
+  --font-en: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+html[lang="fa"] body { font-family: var(--font-fa); }
+html[lang="en"] body { font-family: var(--font-en); }
+code, pre { font-family: var(--font-mono); }
+```
+
+## مقیاس تایپوگرافی (Type Scale)
+
+|Token|کاربرد|اندازه (Desktop)|اندازه (Mobile)|وزن|Line-height|
+|---|---|---|---|---|---|
+|Display|تیتر Hero|clamp(2.5rem, 5vw, 4rem)|2.25rem تا 2.75rem|800|1.15|
+|H1|عنوان صفحه|clamp(2rem, 4vw, 3rem)|1.75rem تا 2.25rem|700|1.2|
+|H2|تیتر سکشن|clamp(1.5rem, 3vw, 2.25rem)|1.375rem تا 1.75rem|700|1.3|
+|H3|تیتر کارت/فیچر|clamp(1.125rem, 2vw, 1.5rem)|1.125rem تا 1.25rem|600|1.4|
+|Body|متن اصلی|1rem (16px)|1rem|400|1.7|
+|Body Large|متن توضیحی مهم|1.125rem (18px)|1rem تا 1.125rem|400|1.75|
+|Caption|متا/راهنما|0.875rem (14px)|0.875rem|400|1.6|
+
+## قواعد خوانایی (Readability Rules)
+حداقل سایز متن: ۱۴px (ترجیحاً ۱۶px)
+حداکثر طول خط برای متن‌های بلند: حدود 60–80 کاراکتر
+پاراگراف‌ها: حداکثر ۳–۴ خط
+در صفحه‌های مارکتینگ، متن بدنه «کم» باشد؛ UI و ساختار باید کار کند.
+اعداد و دیتای داشبورد (Numerals)
+برای داشبورد/جدول/نمودار:
+استفاده از اعداد انگلیسی + font-variant-numeric: tabular-nums;
+برای متن مارکتینگ فارسی:
+استفاده از اعداد فارسی قابل قبول است؛ اما باید یکدست باشد.
+```css
+.data, .metric {
+  font-variant-numeric: tabular-nums;
+}
+```
+نگارش فارسی در UI
+نیم‌فاصله رعایت شود (مثلاً: «مقیاس‌پذیر»، «داده‌محور»)
+نقل قول‌ها: «»
+از متن‌های خیلی رسمی/اداری پرهیز شود (طبق brand-voice.md)
