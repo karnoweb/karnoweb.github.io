@@ -1,156 +1,168 @@
 ---
 id: 02-home-overview
-title: Overview
+title: نمای کلی
 slug: /karnoweb/02-home/overview
 sidebar_position: 1
 ---
+# صفحه خانه (Home) — نمای کلی
 
-# Home Page Goal
+> وضعیت: پیش‌نویس  
+> بخش: 02-home  
+> آخرین به‌روزرسانی: 2026-07-01
 
-The homepage should:
+## Goal (هدف)
 
-* Build trust
-* Explain Karnoweb clearly
-* Showcase expertise
-* Generate leads
-* Direct users into the conversion funnel
+صفحه خانه باید در کمترین زمان ممکن:
+- اعتماد بسازد (Enterprise-ready)
+- کارنووب را شفاف معرفی کند (سیستم رشد + زیرساخت دیجیتال، نه صرفاً طراحی سایت)
+- خدمات و محصولات را «نتیجه‌محور» نشان دهد
+- کاربر را وارد قیف تبدیل کند (رزرو جلسه / درخواست دمو / ثبت لید)
 
----
+## Target Audience (مخاطب هدف)
 
-# Target Audience
+- صاحبان کسب‌وکار (B2B و B2C با نیاز رشد و سیستم‌سازی)
+- مدیران مارکتینگ / فروش / عملیات
+- مدیر IT / CTO
+- استارتاپ‌ها (در فاز ساخت MVP تا Scale)
 
-* Business owners
-* Startups
-* Enterprise managers
-* Marketing teams
-* CTOs
-* Operations managers
+## User Problems (مسئله‌های کاربر)
 
----
+- «این تیم دقیقاً چیکار می‌کند؟ آژانس است یا شرکت محصول؟»
+- «آیا واقعاً توان فنی + درک بیزنسی دارد؟»
+- «اگر شروع کنم، مسیر و ریسک‌ها چیست؟»
+- «نمونه نتیجه واقعی دارید یا فقط ادعاست؟»
+- «قدم بعدی من چیست؟ تماس؟ دمو؟ مشاوره؟»
 
-# Core Message
+## Solutions (راه‌حل‌هایی که صفحه ارائه می‌دهد)
 
-Karnoweb builds scalable digital systems and growth infrastructure for businesses.
+- پیام یک‌خطی واضح در Hero + CTA مشخص
+- Social Proof سریع (لوگو/عدد/نقل‌قول کوتاه)
+- پیش‌نمایش خدمات با تمرکز روی «مسئله→راه‌حل→نتیجه»
+- پیش‌نمایش محصولات با «اسکرین‌شات واقعی» + CTA دمو
+- سکشن «چرا کارنووب؟» با تمایزهای قابل دفاع
+- فرآیند همکاری شفاف (کاهش ترس)
+- Case Study با عدد (اثبات)
+- مقالات (اعتبار + سئو)
+- Lead Magnet (تبدیل کاربر مردد به لید)
+- Final CTA (قوی‌ترین دعوت به اقدام)
 
----
+## CTA (دعوت به اقدام)
 
-# Home Page Structure
+### CTA اصلی صفحه (Primary)
+- «رزرو جلسه استراتژی / مشاوره رایگان»
+- مقصد پیشنهادی: `/contact?type=consultation&source=home`
 
-1. Hero
-2. Social Proof
-3. Services Preview
-4. Products Preview
-5. Why Karnoweb
-6. Process
-7. Case Studies
-8. Articles & Learning
-9. Lead Magnet
-10. Final CTA
-11. Footer
+> قانون رنگ: چون صفحه «مارکتینگ» است، Primary باید Warm باشد (طبق `01-global/cta-strategy.md` و `00-brand/colors-and-theme.md`).
 
----
+### CTAهای ثانویه (Secondary)
+- «درخواست دمو» (برای کاربر محصول‌محور)
+- «مشاهده نمونه‌کارها»
+- «مشاهده خدمات / محصولات»
 
-# Hero Goal
+### CTA نرم (Soft)
+- «دریافت چک‌لیست / دانلود PDF»
+- «تحلیل رایگان سایت»
 
-Immediately explain:
+## SEO Keywords (کلیدواژه‌های سئو)
 
-* What Karnoweb does
-* Why it matters
-* Why users should trust it
+> هدف: ترکیب کلیدواژه‌های «خدمت» + «سیستم‌های سازمانی» + «اتوماسیون/زیرساخت»
 
----
+- طراحی سایت اختصاصی
+- سئو تکنیکال / خدمات سئو
+- اتوماسیون کسب‌وکار
+- طراحی و پیاده‌سازی ERP
+- طراحی و پیاده‌سازی CRM
+- توسعه نرم‌افزار سفارشی (در صورت استراتژی محتوا)
+- زیرساخت رشد دیجیتال
+- مشاوره رشد دیجیتال
 
-# Key Conversion Goals
+## UI Ideas (ایده‌های UI)
 
-* Consultation requests
-* Product demo requests
-* Contact form submissions
-* Portfolio visits
-* Service page visits
+- حس کلی: Modern SaaS / Enterprise (مرجع: Vercel/Linear/Stripe/Framer)
+- رنگ: پایه Cool + Accent Warm فقط برای Conversion
+- Hero: پس‌زمینه Dark با `--hero-bg` (Glow کنترل‌شده)
+- نمایش محصول: Screenshot واقعی + کارت‌های شناور
+- تایپوگرافی: تیتر بزرگ و کوتاه، متن کم و اسکن‌پذیر
+- CTA sticky در Header (طبق `01-global/header.md`)
 
----
+## Sections (سکشن‌های صفحه به ترتیب)
 
-# Main CTA
+1) Hero  
+   فایل: `02-home/hero-section.md`
 
-* Book Free Consultation
-* Start Your Project
+2) Social Proof  
+   فایل: `02-home/social-proof.md`
 
----
+3) Services Preview  
+   فایل: `02-home/services-preview.md`
 
-# Secondary CTA
+4) Products Preview  
+   فایل: `02-home/products-preview.md`
 
-* View Products
-* View Portfolio
+5) Why Karnoweb  
+   فایل: `02-home/why-karnoweb.md`
 
----
+6) Process  
+   فایل: `02-home/process.md`
 
-# UX Goals
+7) Case Studies Preview  
+   فایل: `02-home/case-studies-preview.md`
 
-* High clarity
-* Fast navigation
-* Strong hierarchy
-* Modern SaaS feeling
-* Enterprise trust
+8) Articles Preview  
+   فایل: `02-home/articles-preview.md`
 
----
+9) Lead Magnet  
+   فایل: `02-home/lead-magnet.md`
 
-# SEO Goals
+10) FAQ Preview  
+    فایل: `02-home/faq-preview.md`
 
-* Rank for:
+11) Final CTA  
+    فایل: `02-home/final-cta.md`
 
-  * ERP development
-  * CRM development
-  * SEO services
-  * Custom software
-  * Business automation
+## Components (کامپوننت‌ها)
 
----
+- HeroBadge
+- PrimaryButton (Warm) / SecondaryButton (Outline)
+- TrustBar (Logos / Industries)
+- MetricCards (Counter)
+- ServiceCard
+- ProductCard (با Screenshot)
+- TimelineSteps
+- CaseStudyCard (با Metrics)
+- ArticleCard (Featured + Regular)
+- LeadMagnetForm (Multi-variant)
+- FAQAccordion
+- FinalCTASection
 
-# Important UI Ideas
+## Animations (انیمیشن‌ها)
 
-* Sticky CTA
-* Floating consultation button
-* Animated dashboards
-* Interactive cards
-* Statistics counters
-* Modern gradients
+- Reveal سبک برای سکشن‌ها (opacity + translateY کوچک)
+- Hover elevation برای کارت‌ها
+- Counter animation برای Metrics
+- رعایت `prefers-reduced-motion`
 
----
+(جزئیات: `01-global/animations.md`)
 
-# Important Sections
+## Conversion Strategy (استراتژی تبدیل)
 
-## Hero
+- صفحه خانه باید هم‌زمان دو مسیر را پوشش دهد:
+  1) مسیر خدمات: مقاله/نمونه‌کار → رزرو جلسه
+  2) مسیر محصول: محصول → درخواست دمو
 
-Main brand positioning
+- هر سکشن باید «یک قدم بعدی» داشته باشد؛ CTA زیاد ممنوع.
+- Lead Magnet برای کاربرانی که آماده خرید نیستند (کاهش خروج).
 
-## Services
+## Notes (یادداشت‌ها)
 
-Business solutions
+### متادیتا (پیشنهادی)
+- URL: `/`
+- Title Tag پیشنهادی: «کارنووب | زیرساخت دیجیتال، سئو، اتوماسیون و سامانه‌های سازمانی»
+- Meta Description پیشنهادی: «کارنووب شریک رشد دیجیتال کسب‌وکارهاست؛ از سئو و توسعه وب‌سایت تا ERP/CRM و اتوماسیون. جلسه مشاوره رایگان رزرو کنید.»
 
-## Products
+### Schema (پیشنهادی)
+- Organization + WebSite + SiteLinksSearchBox
 
-Ready-made systems
-
-## Case Studies
-
-Real results
-
-## Articles
-
-Authority & SEO
-
-## Lead Magnet
-
-Lead generation
-
-## Final CTA
-
-High-conversion section
-
----
-
-# Emotional Goal
-
-Users should feel:
-
-“This company understands technology and business growth deeply.”
+### اهداف عملکرد (Performance Targets)
+- LCP: زیر 2.5 ثانیه (عنصر LCP در Hero lazy-load نشود)
+- INP: زیر 100ms
