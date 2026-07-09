@@ -23,7 +23,10 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: |
+          npm config set registry https://registry.npmjs.org/
+          rm -f package-lock.json
+          npm install --no-audit --no-fund --progress=false
 
       - name: Verify docusaurus binary
         run: |
@@ -34,7 +37,6 @@ jobs:
           echo "node version: $(node -v)"
           echo "npm version: $(npm -v)"
           npx --no-install docusaurus --version || true
-          npm run -s build --if-present || true
 
       - name: Build
         run: npx docusaurus build
