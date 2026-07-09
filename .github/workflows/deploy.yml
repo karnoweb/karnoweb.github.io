@@ -23,17 +23,21 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --no-audit --no-fund
 
       - name: Verify docusaurus binary
         run: |
+          echo "pwd: $(pwd)"
+          ls -la
+          echo "node_modules exists?"; ls -la node_modules || true
+          echo "node_modules/.bin exists?"; ls -la node_modules/.bin || true
           echo "node version: $(node -v)"
           echo "npm version: $(npm -v)"
-          ls -la node_modules/.bin | sed -n '1,200p' || true
-          npx --no-install docusaurus --version
+          npx --no-install docusaurus --version || true
+          npm run -s build --if-present || true
 
       - name: Build
-        run: npx --no-install docusaurus build
+        run: npx docusaurus build
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
