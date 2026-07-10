@@ -2,40 +2,28 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'کارنووب',
+  tagline: 'شریک رشد دیجیتال کسب‌وکارها',
+  favicon: 'img/karnoweb-logo.png',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
   url: 'https://karnoweb.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'karnoweb', // Your GitHub org/user name.
-  projectName: 'karnoweb.github.io', // Your GitHub Pages repo name.
+  organizationName: 'karnoweb',
+  projectName: 'karnoweb.github.io',
 
   onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'fa',
     locales: ['fa'],
     localeConfigs: {
       fa: {
-        direction: 'rtl', // این گزینه تمام قالب را راست‌چین می‌کند
+        direction: 'rtl',
         htmlLang: 'fa-IR',
       },
     },
@@ -47,26 +35,9 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/karnoweb/karnoweb.github.io/tree/master/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -75,27 +46,77 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/karnoweb-logo.png',
     colorMode: {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'کارنووب',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'لوگوی کارنووب',
+        src: 'img/karnoweb-logo.png',
       },
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'karnowebSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'مستندات',
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          type: 'dropdown',
+          label: 'خدمات',
+          position: 'left',
+          items: [
+            { label: 'نمای کلی', to: '/docs/karnoweb/03-services/overview' },
+            { label: 'طراحی وب‌سایت', to: '/docs/karnoweb/03-services/custom-website' },
+            { label: 'فروشگاه آنلاین', to: '/docs/karnoweb/03-services/ecommerce' },
+            { label: 'اپلیکیشن موبایل', to: '/docs/karnoweb/03-services/mobile-app' },
+            { label: 'UI/UX', to: '/docs/karnoweb/03-services/ui-ux' },
+            { label: 'سئو', to: '/docs/karnoweb/03-services/seo-service' },
+            { label: 'تولید محتوا', to: '/docs/karnoweb/03-services/content-marketing' },
+            { label: 'اتوماسیون', to: '/docs/karnoweb/03-services/automation' },
+            { label: 'مشاوره', to: '/docs/karnoweb/03-services/startup-consulting' },
+          ],
+        },
+        {
+          type: 'dropdown',
+          label: 'محصولات',
+          position: 'left',
+          items: [
+            { label: 'نمای کلی', to: '/docs/karnoweb/04-products/overview' },
+            { label: 'شاپ ERP', to: '/docs/karnoweb/04-products/shop-erp' },
+            { label: 'CRM', to: '/docs/karnoweb/04-products/crm' },
+            { label: 'حسابداری', to: '/docs/karnoweb/04-products/accounting' },
+            { label: 'منابع انسانی', to: '/docs/karnoweb/04-products/hr-system' },
+            { label: 'LMS', to: '/docs/karnoweb/04-products/lms' },
+            { label: 'باشگاه مشتریان', to: '/docs/karnoweb/04-products/club-management' },
+            { label: 'درخواست دمو', to: '/docs/karnoweb/04-products/demo-system' },
+          ],
+        },
+        {
+          label: 'نمونه‌کارها',
+          to: '/docs/karnoweb/07-portfolio/overview',
+          position: 'left',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'packagesSidebar',
+          position: 'left',
+          label: 'پکیج‌ها',
+        },
+        {
+          label: 'درباره ما',
+          to: '/docs/karnoweb/09-about/overview',
+          position: 'left',
+        },
+        {
+          label: 'تماس',
+          to: '/docs/karnoweb/10-contact/overview',
+          position: 'left',
+        },
+        {
+          href: 'https://github.com/karnoweb',
           label: 'GitHub',
           position: 'right',
         },
@@ -105,46 +126,39 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'شرکت',
           items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
+            { label: 'درباره ما', to: '/docs/karnoweb/09-about/overview' },
+            { label: 'تماس', to: '/docs/karnoweb/10-contact/overview' },
+            { label: 'فرصت‌های شغلی', to: '/docs/karnoweb/13-careers/open-positions' },
           ],
         },
         {
-          title: 'Community',
+          title: 'خدمات',
           items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
+            { label: 'نمای کلی', to: '/docs/karnoweb/03-services/overview' },
+            { label: 'قیمت‌گذاری', to: '/docs/karnoweb/03-services/pricing' },
+            { label: 'سوالات متداول', to: '/docs/karnoweb/03-services/faq' },
           ],
         },
         {
-          title: 'More',
+          title: 'محصولات',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
+            { label: 'نمای کلی', to: '/docs/karnoweb/04-products/overview' },
+            { label: 'مقایسه محصولات', to: '/docs/karnoweb/04-products/comparison' },
+            { label: 'درخواست دمو', to: '/docs/karnoweb/04-products/demo-system' },
+          ],
+        },
+        {
+          title: 'منابع',
+          items: [
+            { label: 'پکیج‌های اوپن‌سورس', to: '/docs/packages' },
+            { label: 'مستندات فنی', to: '/docs/karnoweb/18-technical/stack' },
+            { label: 'GitHub', href: 'https://github.com/karnoweb' },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} کارنووب. ساخته‌شده با Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
@@ -20,8 +19,13 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            to="/docs/karnoweb/02-home/overview">
+            مستندات سایت
+          </Link>
+          <Link
+            className="button button--outline button--secondary button--lg"
+            to="/docs/packages">
+            پکیج‌های اوپن‌سورس
           </Link>
         </div>
       </div>
@@ -33,12 +37,10 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={siteConfig.title}
+      description="مستندات کارنووب — شریک رشد دیجیتال کسب‌وکارها">
       <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
+      <main />
     </Layout>
   );
 }
